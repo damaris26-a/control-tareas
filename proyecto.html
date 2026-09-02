@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Tareas (CRUD)</title>
+    <link rel="stylesheet" href="proyecto.css">
+</head>
+<body>
+
+    <!-- TÍTULO EN LA PARTE SUPERIOR DE LA PÁGINA -->
+    <header class="main-header">
+        <h1> CONTROL DE TAREAS</h1>
+        <p>Organiza tus actividades diarias de forma rápida y sencilla</p>
+    </header>
+
+    <div class="container">
+        <!-- FORMULARIO PARA CREAR Y ACTUALIZAR -->
+        <form id="form-tarea">
+            <input type="hidden" id="id-tarea">
+            
+            <div class="row">
+                <input type="text" id="titulo" placeholder="Nombre de la tarea..." required>
+            </div>
+            
+            <div class="row">
+                <input type="date" id="fecha" required>
+                <select id="prioridad" required>
+                    <option value="" disabled selected>Prioridad</option>
+                    <option value="Alta">Alta 🔴</option>
+                    <option value="Media">Media 🟡</option>
+                    <option value="Baja">Baja 🟢</option>
+                </select>
+                <button type="submit" id="btn-guardar">Agregar</button>
+            </div>
+        </form>
+
+        <!-- TABLA DE LECTURA Y ELIMINACIÓN -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                    <th>Tarea</th>
+                    <th>Fecha</th>
+                    <th>Prioridad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-tareas">
+                <!-- Las tareas se inyectan dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="proyecto.js"></script>
+</body>
+</html>
+
